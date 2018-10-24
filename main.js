@@ -48,12 +48,27 @@ function checkForm()
 
 function submitValue(frm)
 {    
-    var output = "";
-    var formLength = document.getElementById("myForm").length;
-    for(i = 0; i < formLength; i++)
+    if(formValid === true)
     {
-        console.log(frm.elements[i].name + " = " + frm.elements[i].value + "<br/>")
-        output += frm.elements[i].name + " = " + frm.elements[i].value + "<br/>";
+        frm.submit();
+        var output = "";
+        var formLength = document.getElementById("myForm").length;
+        for(i = 0; i < formLength; i++)
+        {
+            console.log(frm.elements[i].name + " = " + frm.elements[i].value + "<br/>")
+            output += frm.elements[i].name + " = " + frm.elements[i].value + "<br/>";
+            if(i >= 3 && i <=5)
+            {
+                output += frm.elements[i].checked + "<br/>";
+            }
+        }
+        document.write(output);
     }
-    document.write(output);
+    else
+    {
+        frm.cName.focus();
+        frm.reset();
+    }
 }
+
+

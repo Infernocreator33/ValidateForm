@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Validate Form</title>
         <link href="styles.css" type="text/css"rel="stylesheet">
-        
+        <link href="bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
+    <body class="container-fluid text-center">
         <form name="myForm" method="GET" id="myForm" action="thankyou.html">
             Name: <input type="text" name="Name" id="myName" >
             <br/>
@@ -28,7 +28,7 @@
             </select>
             <br/>
             <br/>
-            <input type="button" name="submitButton" id="submitButton" value="Submit">
+            <input type="button" name="submitButton" id="submitButton" value="Submit" onclick="submitValue(this.form);">
             <input type="reset">
             <br/>
             <br/>
