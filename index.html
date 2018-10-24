@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Validate Form</title>
+        <link href="styles.css" type="text/css"rel="stylesheet">
+        
+    </head>
+    <body>
+        <form name="myForm" method="GET" id="myForm" action="thankyou.html">
+            Name: <input type="text" name="Name" id="myName" >
+            <br/>
+            Email: <input type="text" name="Email" id="myEmail" placeholder="example@hotmail.com">
+            <br/>
+            Phone: <input type="text" name="Phone" id="myPhone" placeholder="123-123-1234">
+            <br/>
+            <input type="radio" name="radioOptions" id="myRadio1" value="Yes">Yes
+            <input type="radio" name="radioOptions" id="myRadio2" value="No">No
+            <input type="radio" name="radioOptions" id="myRadio3" value="Maybe">Maybe
+            <br/>
+            <br/>
+            <select id="mySelect" name="Selection" multiple>
+                <option name="selectOptions" value="First">First</option>
+                <option name="selectOptions" value="Second">Second</option>
+                <option name="selectOptions" value="Third">Third</option>
+                <option name="selectOptions" value="Fourth">Fourth</option>
+            </select>
+            <br/>
+            <br/>
+            <input type="button" name="submitButton" id="submitButton" value="Submit">
+            <input type="reset">
+            <br/>
+            <br/>
+            <div name="errorMessage" id="errorMessage" class="hide">OOPS!</div>
+        </form>
+        <footer>
+            &copy; Zachary Sexton Zeke Bates
+        </footer>
+    </body>
+    <script src="main.js"></script>
+</html>
