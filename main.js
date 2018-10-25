@@ -50,7 +50,6 @@ function submitValue(frm)
 {    
     if(formValid === true)
     {
-        frm.submit();
         var output = "";
         var formLength = document.getElementById("myForm").length;
         for(i = 0; i < formLength; i++)
