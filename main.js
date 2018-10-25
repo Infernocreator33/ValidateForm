@@ -10,6 +10,7 @@ var emailPattern = RegExp("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+");
 var phonePattern = RegExp("([0-9]{3})-([0-9]{3})-([0-9]{4})");
 
 submitButton.addEventListener("click", checkForm);
+submitButton.addEventListener("click", submitValue);
 function checkForm()
 {
      for(let i = 0; i < radioButtons.length;++i){
@@ -46,7 +47,7 @@ function checkForm()
     }
 }
 
-function submitValue(frm)
+function submitValue()
 {    
     if(formValid === true)
     {
