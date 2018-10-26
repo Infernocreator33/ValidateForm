@@ -13,8 +13,8 @@ var formValid = true;
 var emailPattern = RegExp("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+");
 var phonePattern = RegExp("([0-9]{3})-([0-9]{3})-([0-9]{4})");
 
-submitButton.addEventListener("click", checkForm);
-submitButton.addEventListener("click", submitValue);
+//submitButton.addEventListener("click", checkForm);
+//submitButton.addEventListener("click", submitValue);
 function checkForm()
 {
      for(let i = 0; i < radioButtons.length;++i){
@@ -64,36 +64,36 @@ function checkForm()
 
     if(formValid === false){
         errorMessage.className = "show";
+        return formValid;
     }   
     else{
         errorMessage.className = "hide";
-        return true;
+        frm.submit();
     }
 }
 
-function submitValue()
-{    
-    if(formValid === true)
-    {
-        var output = "";
-        var formLength = document.getElementById("myForm").length;
-        for(i = 1; i < formLength; i++)
-        {
-            console.log(frm.elements[i].name + " = " + frm.elements[i].value + "<br/>")
-            output += frm.elements[i].name + " = " + frm.elements[i].value + "<br/>";
-            if(i >= 5 && i <=7)
-            {
-                console.log(frm.elements[i].checked);
-                output += frm.elements[i].checked + "<br/>";
-            }
-        }
-        document.write(output);
-    }
-    else
-    {
-        frm.cName.focus();
-        frm.reset();
-    }
-}
+// function submitValue()
+// {    
+//     if(formValid === true)
+//     {
+//         var output = "";
+//         var formLength = document.getElementById("myForm").length;
+//         for(i = 1; i < formLength; i++)
+//         {
+//             console.log(frm.elements[i].name + " = " + frm.elements[i].value + "<br/>")
+//             output += frm.elements[i].name + " = " + frm.elements[i].value + "<br/>";
+//             if(i >= 5 && i <=7)
+//             {
+//                 console.log(frm.elements[i].checked);
+//                 output += frm.elements[i].checked + "<br/>";
+//             }
+//         }        
+//     }
+//     else
+//     {
+//         frm.cName.focus();
+//         frm.reset();
+//     }
+// }
 
 
