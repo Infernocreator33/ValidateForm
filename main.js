@@ -3,6 +3,10 @@ var email = document.getElementById("myEmail");
 var phone = document.getElementById("myPhone");
 var submitButton = document.getElementById("submitButton");
 var radioButtons = document.getElementsByName("radioOptions");
+var field2 = document.getElementById("field2");
+var mySelect = document.getElementById("mySelect");
+var selectOptions = document.getElementsByName("selectOptions");
+var field3 = document.getElementById("field3");
 var errorMessage = document.getElementById("errorMessage");
 var frm = document.forms[0];
 var formValid = true;
@@ -16,12 +20,28 @@ function checkForm()
      for(let i = 0; i < radioButtons.length;++i){
         if(radioButtons[i].checked == false){
             formValid = false;
+            field2.style.backgroundColor = "red";
         }
         else
         {
             formValid = true;
+            field2.style.backgroundColor = "white";
             break;
         }
+     }
+     for(let i = 0; i < mySelect.length; i++)
+     {
+         if(selectOptions[i].selected)
+         {
+            formValid = true;
+            field3.style.backgroundColor = "white";
+            break;
+         }
+         else
+         {
+            formValid = false;
+            field3.style.backgroundColor = "red";
+         }
      } 
     if(cName.value.length < 6){
         cName.style.backgroundColor = "red";
@@ -57,11 +77,11 @@ function submitValue()
     {
         var output = "";
         var formLength = document.getElementById("myForm").length;
-        for(i = 0; i < formLength; i++)
+        for(i = 1; i < formLength; i++)
         {
             console.log(frm.elements[i].name + " = " + frm.elements[i].value + "<br/>")
             output += frm.elements[i].name + " = " + frm.elements[i].value + "<br/>";
-            if(i >= 3 && i <=5)
+            if(i >= 5 && i <=7)
             {
                 console.log(frm.elements[i].checked);
                 output += frm.elements[i].checked + "<br/>";
