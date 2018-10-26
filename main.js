@@ -14,7 +14,11 @@ submitButton.addEventListener("click", submitValue);
 function checkForm()
 {
      for(let i = 0; i < radioButtons.length;++i){
-        if(radioButtons[i].checked){
+        if(radioButtons[i].checked == false){
+            formValid = false;
+        }
+        else
+        {
             formValid = true;
             break;
         }
@@ -59,6 +63,7 @@ function submitValue()
             output += frm.elements[i].name + " = " + frm.elements[i].value + "<br/>";
             if(i >= 3 && i <=5)
             {
+                console.log(frm.elements[i].checked);
                 output += frm.elements[i].checked + "<br/>";
             }
         }
